@@ -1,0 +1,66 @@
+- Login (đăng nhập)
+- Check in/out
+- View Schedule (Xem lịch làm việc)
+- View Room (xem danh sách phòng, phòng trống/đã đặt)
+- Update Room (cập nhật thông tin phòng)
+- View Guest (xem danh sách khách trong khách sạn, khách nào ở phòng nào)
+- Update Guest (thêm xóa sửa thông tin khách)
+- Reserve Room (đặt phòng cho khách, check in và check out cho khách)
+- Generate Bill (xuất hóa đơn, thời gian ở, thức ăn tiêu thụ, ...)
+- View Food (xem danh sách thực phẩm trong kho, trong khách sạn, thực phẩm từng phòng)
+- Update Food (thêm xóa sửa thông tin thực phẩm)
+- View Employee (xem danh sách nhân viên - tiếp tân, lao công)
+- Update Empoyee (thêm xóa sửa thông tin nhân viên)
+- Generate Report (xuất báo cáo - giờ làm việc + lương, thu chi trong ngày)
+
+Giao diện
+
+1. Receptionist
+- Login
+Room:
+- View Room
+- Upate Room
+Guest:
+- View Guest
+- Update Guest
+- Reserve Room
+- Generate Bill
+Food:
+- View Food
+- Update Food
+You:
+- Check in/out
+- View Schedule
+- Logout
+
+2. Custodian
+- Login
+Room:
+- View Room
+You:
+- Check in/out
+- View Schedule
+- Logout
+
+3. Manager
+- Login
+Employee:
+- View Employee
+- Update Employee
+Room:
+- View Room
+- Upate Room
+Guest:
+- View Guest
+- Update Guest
+- Reserve Room
+- Generate Bill
+Food:
+- View Food
+- Update Food
+You:
+- Check in/out
+- View Schedule
+- Logout
+
+
