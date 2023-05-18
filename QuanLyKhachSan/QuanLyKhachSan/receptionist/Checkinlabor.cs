@@ -27,7 +27,7 @@ namespace QuanLyKhachSan.receptionist
                 int month = selected_date.Month;
                 int day = selected_date.Day;
                 string date = $"{year}-{month}-{day}";
-                SqlCommand command = new SqlCommand("SELECT * FROM Timekeeping WHERE Timekeeping_employee = @id and date = @date");
+                SqlCommand command = new SqlCommand("SELECT Timekeeping.*,employee_name,role FROM Timekeeping,employees WHERE Timekeeping_employee = @id and date = @date and Timekeeping_employee = employee_id");
                 command.Parameters.Add("@id", SqlDbType.Int).Value = Global.GlobalUserId;
                 command.Parameters.Add("@date", SqlDbType.NVarChar).Value = date;
 
@@ -37,14 +37,14 @@ namespace QuanLyKhachSan.receptionist
                 dataGridView1.DataSource = labor.getcheckin(command);
                 dataGridView1.Columns[0].Visible = false;
             }
-            else if(Global.Globalrole.ToString() == "Receptionist")
+            else 
             {
                 DateTime selected_date = dateTimePickerdaymonthyear.Value;
                 int year = selected_date.Year;
                 int month = selected_date.Month;
                 int day = selected_date.Day;
                 string date = $"{year}-{month}-{day}";
-                SqlCommand command = new SqlCommand("SELECT Timekeeping_id,Timekeeping_employee,date,timein,timeout FROM Timekeeping,employees WHERE  date = @date and role ='Labor' and Timekeeping_employee = employee_id");
+                SqlCommand command = new SqlCommand("SELECT Timekeeping_id,Timekeeping_employee,date,timein,timeout,employee_name,role FROM Timekeeping,employees WHERE  date = @date and role ='Labor' and Timekeeping_employee = employee_id");
 
                 command.Parameters.Add("@date", SqlDbType.NVarChar).Value = date;
 
@@ -88,7 +88,7 @@ namespace QuanLyKhachSan.receptionist
                     }
                 }
             }
-            else if (Global.Globalrole.ToString() == "Receptionist")
+            else 
             {
                 int ideploy = Convert.ToInt32(textBoxidemployee.Text);
                 DateTime selected_date = dateTimePickerdaymonthyear.Value;
@@ -147,7 +147,7 @@ namespace QuanLyKhachSan.receptionist
                     MessageBox.Show("Please check in advance");
                 }
             }
-            else if (Global.Globalrole.ToString() == "Receptionist")
+            else 
             {
                 int ideploy = Convert.ToInt32(textBoxidemployee.Text);
 
@@ -194,7 +194,7 @@ namespace QuanLyKhachSan.receptionist
                     dateTimePickertimeout.Value = time1;
                 }
             }
-            else if (Global.Globalrole.ToString() == "Receptionist")
+            else 
             {
                 textBoxidemployee.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 string timein = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -230,7 +230,7 @@ namespace QuanLyKhachSan.receptionist
                     buttonshow_Click(null, null);
                 }
             }
-            else if (Global.Globalrole.ToString() == "Receptionist")
+            else 
             {
                 int ideploy = Convert.ToInt32(textBoxidemployee.Text);
 
@@ -255,6 +255,10 @@ namespace QuanLyKhachSan.receptionist
             {
                 textBoxidemployee.Visible = false;
                 label3.Visible = false;
+
+            }
+            else
+            {
 
             }
         }

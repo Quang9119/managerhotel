@@ -32,14 +32,19 @@ namespace QuanLyKhachSan
         {
             if (Global.Globalrole.ToString() == "Labor")
             {
-                managementToolStripMenuItem.Visible = false;
-                checkInoutReceptionistToolStripMenuItem.Visible = false;
+                checkInOutReceptoinistToolStripMenuItem.Visible = false;
+                employeesToolStripMenuItem.Visible = false;
                 managementGuestToolStripMenuItem.Visible = false;
                 managementFoodToolStripMenuItem.Visible = false;
                 managementFoodToolStripMenuItem.Visible = false;
                 roomToolStripMenuItem.Visible = false;
                 ReservationToolStripMenuItem.Visible = false;
             }
+            
+            else
+            {
+
+            }    
         }
 
         private void staticsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -160,7 +165,7 @@ namespace QuanLyKhachSan
 
         private void managementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Managementlabor mnglabor = new Managementlabor();
+            Management mnglabor = new Management();
             mnglabor.ShowDialog();
         }
 
@@ -176,20 +181,17 @@ namespace QuanLyKhachSan
 
         private void checkinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Checkinlabor check = new Checkinlabor();
-            check.ShowDialog();
+            
         }
 
         private void managementToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Managementlabor labor = new Managementlabor();
-            labor.ShowDialog();
+            
         }
 
         private void checkInoutReceptionistToolStripMenuItem_Click_2(object sender, EventArgs e)
         {
-            Checkinreception checkinrecep = new Checkinreception();
-            checkinrecep.ShowDialog();
+            
         }
 
         private void managementGuestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,6 +210,29 @@ namespace QuanLyKhachSan
         {
             ManagementRoom room = new ManagementRoom();
             room.ShowDialog();
+        }
+
+        private void checkInOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Checkinlabor check = new Checkinlabor();
+            check.ShowDialog();
+        }
+
+        private void managementLaborToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Management labor = new Management();
+            labor.ShowDialog();
+        }
+
+        private void managementReceptionistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkInOutReceptoinistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Checkinreception checkinrecep = new Checkinreception();
+            checkinrecep.ShowDialog();
         }
     }
 }

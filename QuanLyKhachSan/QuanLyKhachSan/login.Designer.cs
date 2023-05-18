@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxusername = new System.Windows.Forms.TextBox();
@@ -38,22 +37,16 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.radioButtonemloyee = new System.Windows.Forms.RadioButton();
+            this.radioButtonlabor = new System.Windows.Forms.RadioButton();
             this.linkLabelforgotpassword = new System.Windows.Forms.LinkLabel();
             this.checkBoxpassword = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButtonrêcptionist = new System.Windows.Forms.RadioButton();
+            this.radioButtonmanager = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(106, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 185);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // labelUsername
             // 
@@ -135,16 +128,16 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // radioButtonemloyee
+            // radioButtonlabor
             // 
-            this.radioButtonemloyee.AutoSize = true;
-            this.radioButtonemloyee.Location = new System.Drawing.Point(315, 470);
-            this.radioButtonemloyee.Name = "radioButtonemloyee";
-            this.radioButtonemloyee.Size = new System.Drawing.Size(138, 29);
-            this.radioButtonemloyee.TabIndex = 5;
-            this.radioButtonemloyee.TabStop = true;
-            this.radioButtonemloyee.Text = "Employee";
-            this.radioButtonemloyee.UseVisualStyleBackColor = true;
+            this.radioButtonlabor.AutoSize = true;
+            this.radioButtonlabor.Location = new System.Drawing.Point(315, 470);
+            this.radioButtonlabor.Name = "radioButtonlabor";
+            this.radioButtonlabor.Size = new System.Drawing.Size(98, 29);
+            this.radioButtonlabor.TabIndex = 5;
+            this.radioButtonlabor.TabStop = true;
+            this.radioButtonlabor.Text = "Labor";
+            this.radioButtonlabor.UseVisualStyleBackColor = true;
             // 
             // linkLabelforgotpassword
             // 
@@ -181,16 +174,49 @@
             this.linkLabel1.Text = "Change  Password";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(106, 54);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // radioButtonrêcptionist
+            // 
+            this.radioButtonrêcptionist.AutoSize = true;
+            this.radioButtonrêcptionist.Location = new System.Drawing.Point(477, 470);
+            this.radioButtonrêcptionist.Name = "radioButtonrêcptionist";
+            this.radioButtonrêcptionist.Size = new System.Drawing.Size(162, 29);
+            this.radioButtonrêcptionist.TabIndex = 10;
+            this.radioButtonrêcptionist.TabStop = true;
+            this.radioButtonrêcptionist.Text = "Receptionist";
+            this.radioButtonrêcptionist.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonmanager
+            // 
+            this.radioButtonmanager.AutoSize = true;
+            this.radioButtonmanager.Location = new System.Drawing.Point(654, 470);
+            this.radioButtonmanager.Name = "radioButtonmanager";
+            this.radioButtonmanager.Size = new System.Drawing.Size(128, 29);
+            this.radioButtonmanager.TabIndex = 11;
+            this.radioButtonmanager.TabStop = true;
+            this.radioButtonmanager.Text = "Manager";
+            this.radioButtonmanager.UseVisualStyleBackColor = true;
+            // 
             // login
             // 
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 655);
+            this.Controls.Add(this.radioButtonmanager);
+            this.Controls.Add(this.radioButtonrêcptionist);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBoxpassword);
             this.Controls.Add(this.linkLabelforgotpassword);
-            this.Controls.Add(this.radioButtonemloyee);
+            this.Controls.Add(this.radioButtonlabor);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxpassword);
@@ -202,8 +228,8 @@
             this.Name = "login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,10 +246,12 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.RadioButton radioButtonemloyee;
+        private System.Windows.Forms.RadioButton radioButtonlabor;
         private System.Windows.Forms.LinkLabel linkLabelforgotpassword;
         private System.Windows.Forms.CheckBox checkBoxpassword;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.RadioButton radioButtonmanager;
+        private System.Windows.Forms.RadioButton radioButtonrêcptionist;
     }
 }
 

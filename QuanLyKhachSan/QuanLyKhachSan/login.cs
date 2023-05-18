@@ -47,19 +47,32 @@ namespace QuanLyKhachSan
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (radioButtonemloyee.Checked)
-            {
+            
                 MY_DB db = new MY_DB();
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataTable table = new DataTable();
-                SqlCommand command = new SqlCommand("SELECT * FROM employees WHERE username = @User AND password = @Pass", db.getConnection);
+                
+                SqlCommand command = new SqlCommand();
+            command.Connection = db.getConnection;
+
+            command.CommandText = "SELECT * FROM employees WHERE username = @User AND password = @Pass";
                 command.Parameters.Add("@User", SqlDbType.VarChar).Value = textBoxusername.Text;
                 command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = textBoxpassword.Text;
+            if (radioButtonlabor.Checked)
+            {
+                command.CommandText += " and role = 'Labor'";
+            }
+            else if (radioButtonrêcptionist.Checked)
+            {
+                command.CommandText += " and role = 'Receptionist'";
+            }
+            else if (radioButtonmanager.Checked)
+            {
+                command.CommandText += " and role = 'Manager'";
+            }
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
 
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                if ((table.Rows.Count > 0))
+            if ((table.Rows.Count > 0))
                 {
                     MessageBox.Show("Ok, next time will be go to Main menu of app.");
                     int userid = Convert.ToInt32(table.Rows[0][0].ToString());
@@ -68,26 +81,18 @@ namespace QuanLyKhachSan
                     Global.SetGlobalrole(role);
 
                     this.DialogResult = DialogResult.OK;
-                    if (role == "Labor")
-                    {
-                        Mainformreceptionist mflb = new Mainformreceptionist();
-                        mflb.Width = 1000;
-                        mflb.ShowDialog();
-                    }
-                    else if (role == "Receptionist")
-                    {
-                        Mainformreceptionist mfrcp = new Mainformreceptionist();
-                        mfrcp.Width = 1000;
-                        mfrcp.ShowDialog();
-                    }
-
+                    
+                    Mainformreceptionist mflb = new Mainformreceptionist();
+                    mflb.Width = 1000;
+                    mflb.ShowDialog();
+                    
                 }
                 else
                 {
                     MessageBox.Show("Ivalid username or password!");
                     
                 }
-            }
+            
         }
         private void textBoxusername_TextChanged(object sender, EventArgs e)
         {
