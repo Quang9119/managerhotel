@@ -192,5 +192,40 @@ namespace QuanLyKhachSan
                 return false;
             }
         }
+        public bool Checkchangpass(string username, string password)
+        {
+            SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM employees WHERE username = @user AND password = @pass ",
+                mydb.getConnection);
+            command.Parameters.AddWithValue("@user", username);
+            command.Parameters.AddWithValue("@pass", password);
+            
+
+            mydb.OpenConnection();
+
+            int count = Convert.ToInt32(command.ExecuteScalar());
+
+            mydb.closeConnection();
+
+            return count > 0;
+        }
+        public bool upDateuser(string usernamenew, string password, string usernameold)
+        {
+            SqlCommand command = new SqlCommand("UPDATE employees SET password = @pass, username = @usernew WHERE username = @userold", mydb.getConnection);
+            command.Parameters.Add("@usernew", SqlDbType.VarChar).Value = usernamenew;
+            command.Parameters.Add("@pass", SqlDbType.VarChar).Value = password;
+            command.Parameters.Add("@userold", SqlDbType.VarChar).Value = usernameold;
+
+            mydb.OpenConnection();
+            if ((command.ExecuteNonQuery() == 1))
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
     }
 }

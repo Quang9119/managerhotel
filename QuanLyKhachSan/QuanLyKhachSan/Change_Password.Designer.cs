@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Change_Password));
             this.buttonRegister = new System.Windows.Forms.Button();
             this.textBoxpasswordold = new System.Windows.Forms.TextBox();
             this.textBoxusername = new System.Windows.Forms.TextBox();
@@ -39,11 +38,6 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderexits = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvidercharacter = new System.Windows.Forms.ErrorProvider(this.components);
-            this.textBoxOTP = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonSendOTP = new System.Windows.Forms.Button();
-            this.textBoxemail = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBoxpasswordnew = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxpasswordold = new System.Windows.Forms.CheckBox();
@@ -102,7 +96,6 @@
             // 
             // pictureBoxforgotpassword
             // 
-            this.pictureBoxforgotpassword.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxforgotpassword.Image")));
             this.pictureBoxforgotpassword.Location = new System.Drawing.Point(401, 78);
             this.pictureBoxforgotpassword.Name = "pictureBoxforgotpassword";
             this.pictureBoxforgotpassword.Size = new System.Drawing.Size(261, 208);
@@ -121,51 +114,6 @@
             // errorProvidercharacter
             // 
             this.errorProvidercharacter.ContainerControl = this;
-            // 
-            // textBoxOTP
-            // 
-            this.textBoxOTP.Location = new System.Drawing.Point(401, 610);
-            this.textBoxOTP.Name = "textBoxOTP";
-            this.textBoxOTP.Size = new System.Drawing.Size(159, 31);
-            this.textBoxOTP.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(163, 598);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 43);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "OTP :";
-            // 
-            // buttonSendOTP
-            // 
-            this.buttonSendOTP.BackColor = System.Drawing.Color.MediumBlue;
-            this.buttonSendOTP.Font = new System.Drawing.Font("Javanese Text", 12F);
-            this.buttonSendOTP.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonSendOTP.Location = new System.Drawing.Point(347, 666);
-            this.buttonSendOTP.Name = "buttonSendOTP";
-            this.buttonSendOTP.Size = new System.Drawing.Size(213, 96);
-            this.buttonSendOTP.TabIndex = 22;
-            this.buttonSendOTP.Text = "Send OPT";
-            this.buttonSendOTP.UseVisualStyleBackColor = false;
-            this.buttonSendOTP.Click += new System.EventHandler(this.buttonSendOTP_Click);
-            // 
-            // textBoxemail
-            // 
-            this.textBoxemail.Location = new System.Drawing.Point(401, 386);
-            this.textBoxemail.Name = "textBoxemail";
-            this.textBoxemail.Size = new System.Drawing.Size(464, 31);
-            this.textBoxemail.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 374);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 43);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Email :";
             // 
             // textBoxpasswordnew
             // 
@@ -221,11 +169,6 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.pictureBoxforgotpassword);
-            this.Controls.Add(this.textBoxOTP);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonSendOTP);
-            this.Controls.Add(this.textBoxemail);
-            this.Controls.Add(this.label1);
             this.Name = "Change_Password";
             this.Text = "Change_Password";
             this.Load += new System.EventHandler(this.Change_Password_Load);
@@ -247,11 +190,6 @@
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.PictureBox pictureBoxforgotpassword;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.TextBox textBoxOTP;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonSendOTP;
-        private System.Windows.Forms.TextBox textBoxemail;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProviderexits;
         private System.Windows.Forms.ErrorProvider errorProvidercharacter;
         private System.Windows.Forms.TextBox textBoxpasswordnew;

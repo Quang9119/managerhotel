@@ -25,63 +25,28 @@ namespace QuanLyKhachSan
 
         private void Change_Password_Load(object sender, EventArgs e)
         {
-            textBoxOTP.Enabled = false;
+            
         }
 
         private void buttonSendOTP_Click(object sender, EventArgs e)
         {
-            try
-            {
-                otp = random.Next(100000, 1000000);
-                var fromAddress = new MailAddress("nguyenminhquangquangquang@gmail.com");
-                var toAddress = new MailAddress(textBoxemail.ToString());
-                const string frompass = "ccmxillgefdyetrr";
-                const string subject = "Verify your email address";
-                string body = otp.ToString();
-                var smtp = new SmtpClient
-                {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(fromAddress.Address, frompass),
-                    Timeout = 200000
-                };
-                using (var message = new System.Net.Mail.MailMessage(fromAddress, toAddress)
-                {
-                    Subject = subject,
-                    Body = "To verify your email address use this security code: " + body + ". \nIf you didn't request this code, you can safely ignore this email. Someone else might have typed your email address by mistake."
-
-                })
-                {
-                    smtp.Send(message);
-                }
-                MessageBox.Show("OTP sent to mail");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            textBoxOTP.Enabled = true;
+            
+           
+            
         }
-
+        labor labor = new labor();
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (!otp.ToString().Equals(textBoxOTP.Text))
-            {
-                MessageBox.Show("Incorrect OTP");
-                return;
-            }
+            
             string username = textBoxusername.Text;
             string passwordold = textBoxpasswordold.Text;
             string passwordnew = textBoxpasswordnew.Text;
-            string email = textBoxemail.Text;
-            if (user.Checkchangpass(username, passwordold, email))
+            
+            if (labor.Checkchangpass(username, passwordold))
             {
                 try
                 {
-                    if (user.upDateuser(username, passwordnew, username))
+                    if (labor.upDateuser(username, passwordnew, username))
                     {
                         MessageBox.Show("Information the user Updated", "Edit User", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

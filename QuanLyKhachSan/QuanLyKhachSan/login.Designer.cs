@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.radioButtonlabor = new System.Windows.Forms.RadioButton();
-            this.linkLabelforgotpassword = new System.Windows.Forms.LinkLabel();
             this.checkBoxpassword = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -139,18 +138,6 @@
             this.radioButtonlabor.Text = "Labor";
             this.radioButtonlabor.UseVisualStyleBackColor = true;
             // 
-            // linkLabelforgotpassword
-            // 
-            this.linkLabelforgotpassword.AutoSize = true;
-            this.linkLabelforgotpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelforgotpassword.Location = new System.Drawing.Point(849, 577);
-            this.linkLabelforgotpassword.Name = "linkLabelforgotpassword";
-            this.linkLabelforgotpassword.Size = new System.Drawing.Size(173, 25);
-            this.linkLabelforgotpassword.TabIndex = 7;
-            this.linkLabelforgotpassword.TabStop = true;
-            this.linkLabelforgotpassword.Text = "Fotgot Password";
-            this.linkLabelforgotpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelforgotpassword_LinkClicked_1);
-            // 
             // checkBoxpassword
             // 
             this.checkBoxpassword.AutoSize = true;
@@ -215,7 +202,6 @@
             this.Controls.Add(this.radioButtonrêcptionist);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBoxpassword);
-            this.Controls.Add(this.linkLabelforgotpassword);
             this.Controls.Add(this.radioButtonlabor);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonLogin);
@@ -247,7 +233,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.RadioButton radioButtonlabor;
-        private System.Windows.Forms.LinkLabel linkLabelforgotpassword;
         private System.Windows.Forms.CheckBox checkBoxpassword;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.RadioButton radioButtonmanager;
